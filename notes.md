@@ -50,3 +50,34 @@
   - complicated functions
   - resistant to refactors
   - difficult to diagnose
+
+### ESLint
+
+- .eslint.json : [example](https://github.com/bonnie/bonniedotdev/blob/main/client/.eslintrc.json)
+- [eslint-plugin-jest-dom](https://github.com/testing-library/eslint-plugin-jest-dom)
+- [eslint-plugin-testing-library](https://github.com/testing-library/eslint-plugin-testing-library)
+
+### [Command]
+
+- get : expect element to be in DOM
+- query : expect element not to be in DOM
+- find : expect element to appear async
+
+### [All]
+
+- exclude/include expect only/more than one match
+
+### QueryType
+
+- Role(most preferred)
+- AltText(images)
+- Text(display elements)
+- Form elements
+  - PlaceholderText
+  - LabelText
+  - DisplayValue
+
+### References
+
+- [Queries](https://testing-library.com/docs/queries/about/)
+- [CheatSheet](https://testing-library.com/docs/react-testing-library/cheatsheet/)
