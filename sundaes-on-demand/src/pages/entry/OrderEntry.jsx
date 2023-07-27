@@ -1,5 +1,4 @@
 import Options from './Options';
-import ScoopOption from './ScoopOption';
 
 export default function OderEntry() {
   return (
