@@ -81,3 +81,7 @@
 
 - [Queries](https://testing-library.com/docs/queries/about/)
 - [CheatSheet](https://testing-library.com/docs/react-testing-library/cheatsheet/)
+
+### Race Condition Error
+
+- waitFor : wait until we have all
