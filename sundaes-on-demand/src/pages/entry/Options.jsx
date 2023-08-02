@@ -18,8 +18,12 @@ export default function Options({ optionType }) {
     const controller = new AbortController();
     axios
       .get(`http://localhost:3030/${optionType}`, { signal: controller.signal })
-      .then((response) => setItems(response.data))
+      .then((response) => {
+        console.log(response);
+        setItems(response.data);
+      })
       .catch((error) => {
+        console.log(error);
         setError(true);
       });
     // abort axios call on component unmount
@@ -28,9 +32,9 @@ export default function Options({ optionType }) {
     };
   }, [optionType]);
 
-  if (error) {
-    return <AlertBanner />;
-  }
+  // if (error) {
+  //   return <AlertBanner />;
+  // }
 
   const ItemComponent = optionType === 'scoops' ? ScoopOption : ToppingOption;
   const title = optionType[0].toUpperCase() + optionType.slice(1).toLowerCase();
