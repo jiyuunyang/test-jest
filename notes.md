@@ -85,3 +85,5 @@
 ### Race Condition Error
 
 - waitFor : wait until we have all
+- error case : Network call return after unmout component
+  - add clean up process after unmouting
