@@ -17,7 +17,10 @@ export default function Options({ optionType }) {
     // create an abortController to attach to network request
     // const controller = new AbortController();
     axios
-      .get(`http://localhost:3030/${optionType}`, { signal: controller.signal })
+      .get(
+        `http://localhost:3030/${optionType}`
+        // { signal: controller.signal }
+      )
       .then((response) => setItems(response.data))
       .catch((error) => {
         setError(true);

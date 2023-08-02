@@ -67,6 +67,7 @@ test('Update topping subtotal when toppings change', async () => {
 describe('grand total', () => {
   test('grand total starts at $0.00', () => {
     // const { unmount } = render(<OrderEntry />);
+    render(<OrderEntry />);
     const grandTotal = screen.getByRole('heading', {
       name: /Grand total: \$/i,
     });
@@ -98,6 +99,7 @@ describe('grand total', () => {
 
   test('grand total updates properly if topping is added first', async () => {
     const user = userEvent.setup();
+    render(<OrderEntry />);
     const grandTotal = screen.getByRole('heading', {
       name: /Grand total: \$/i,
     });
