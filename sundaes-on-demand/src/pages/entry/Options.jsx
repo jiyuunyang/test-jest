@@ -32,9 +32,9 @@ export default function Options({ optionType }) {
     };
   }, [optionType]);
 
-  // if (error) {
-  //   return <AlertBanner />;
-  // }
+  if (error) {
+    return <AlertBanner />;
+  }
 
   const ItemComponent = optionType === 'scoops' ? ScoopOption : ToppingOption;
   const title = optionType[0].toUpperCase() + optionType.slice(1).toLowerCase();

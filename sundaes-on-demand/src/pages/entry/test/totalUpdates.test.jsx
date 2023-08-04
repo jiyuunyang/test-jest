@@ -15,12 +15,14 @@ test('Update scoop subtotal when scoops change', async () => {
   expect(scoopsSubtotal).toHaveTextContent('0.00');
 
   // update vanilla scoops to 1, and check subtotal
-  const vanilaInput = await screen.findByRole('spinbutton', { name: 'Vanila' });
+  const vanillaInput = await screen.findByRole('spinbutton', {
+    name: 'Vanilla',
+  });
 
   // userEvent.clear: clear exist text
   // userEvetn.type: enter number
-  await user.clear(vanilaInput);
-  await user.type(vanilaInput, '1');
+  await user.clear(vanillaInput);
+  await user.type(vanillaInput, '1');
   expect(scoopsSubtotal).toHaveTextContent('2.00');
 
   // update chocolate scoops to 2, and check subtoal
@@ -80,11 +82,11 @@ describe('grand total', () => {
       name: /Grand total: \$/i,
     });
     // update vanilla scoops to 2 and check grand total
-    const vanilaInput = await screen.findByRole('spinbutton', {
-      name: 'Vanila',
+    const vanillaInput = await screen.findByRole('spinbutton', {
+      name: 'Vanilla',
     });
-    await user.clear(vanilaInput);
-    await user.type(vanilaInput, '2');
+    await user.clear(vanillaInput);
+    await user.type(vanillaInput, '2');
     expect(grandTotal).toHaveTextContent('4.00');
 
     // add cherries and check grand total
@@ -110,11 +112,11 @@ describe('grand total', () => {
     expect(grandTotal).toHaveTextContent('1.50');
 
     // update vanilla scoops to 2 and check grand total
-    const vanilaInput = await screen.findByRole('spinbutton', {
-      name: 'Vanila',
+    const vanillaInput = await screen.findByRole('spinbutton', {
+      name: 'Vanilla',
     });
-    await user.clear(vanilaInput);
-    await user.type(vanilaInput, '2');
+    await user.clear(vanillaInput);
+    await user.type(vanillaInput, '2');
     expect(grandTotal).toHaveTextContent('5.50');
   });
   test('grand total updates properly if topping is removed', async () => {
@@ -131,15 +133,15 @@ describe('grand total', () => {
     await user.click(cherrriesCheckbox);
 
     // update vanilla scoops to 2 and check grand total
-    const vanilaInput = await screen.findByRole('spinbutton', {
-      name: 'Vanila',
+    const vanillaInput = await screen.findByRole('spinbutton', {
+      name: 'Vanilla',
     });
-    await user.clear(vanilaInput);
-    await user.type(vanilaInput, '2');
+    await user.clear(vanillaInput);
+    await user.type(vanillaInput, '2');
 
     // remove 1 scoop of vanilla and check grand total
-    await user.clear(vanilaInput);
-    await user.type(vanilaInput, '1');
+    await user.clear(vanillaInput);
+    await user.type(vanillaInput, '1');
     expect(grandTotal).toHaveTextContent('3.50');
 
     // remove cherries and check grand total

@@ -11,7 +11,7 @@ test('Displays image for each scoop option from server', async () => {
 
   // confirm alt text of images
   const altText = scoopImages.map((element) => element.alt);
-  expect(altText).toEqual(['Chocolate scoop', 'Vanila scoop']);
+  expect(altText).toEqual(['Chocolate scoop', 'Vanilla scoop']);
 });
 
 test('Displays image for each toppings option from server', async () => {
