@@ -87,3 +87,26 @@
 - waitFor : wait until we have all
 - error case : Network call return after unmout component
   - add clean up process after unmouting
+
+### Happy path(Happy Day / Golden Path)
+
+- tests that execute customer flow without error
+
+### Debuggging Tips
+
+- screen.debug() : print out test output (DOM looks like)
+- logRoles
+- getBy -> await findBy (async)
+- userEvent: all needs await
+- Read test error output carefully
+- [Common mistakes with React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
+
+### Resolving Errors from tests
+
+- Unable to find role : logRoles / check name
+- not wrapped in act : Race condition (useEffect clean up and unmount)
+- connection refused : no msw handler
+
+### Passing a Mock as a Props
+
+- jest.fn() : placeholder to avoid error
