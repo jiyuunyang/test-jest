@@ -66,16 +66,19 @@ test('order phase for happy path', async () => {
   await user.click(confirmOrderButton);
 
   // expect loading to show
-  // const loading = screen.getByText(/loading/i);
-  // expect(loading).toBeInTheDocument();
+  const loading = screen.getByText(/loading/i);
+  expect(loading).toBeInTheDocument();
 
   // check confirmation page text
   // this one is awync because there is POST request to server in between summary
   //  and confirmation pages
-  const thankYouHeader = screen.getByRole('heading', { name: /thank you/i });
+  const thankYouHeader = await screen.findByRole('heading', {
+    name: /thank you/i,
+  });
   expect(thankYouHeader).toBeInTheDocument();
 
   // expect that loading has disappeared
+  // not in the document : using queryBy
   const notLoading = screen.queryByText('loading');
   expect(notLoading).not.toBeInTheDocument();
 

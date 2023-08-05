@@ -23,7 +23,7 @@ export const handlers = [
     );
   }),
   rest.post('http://localhost:3030/order', async (req, res, ctx) => {
-    // await sleep(100);
+    await sleep(100);
     return res(
       ctx.json({ orderNumber: Math.floor(Math.random() * 10000000000) })
     );
