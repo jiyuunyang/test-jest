@@ -134,7 +134,6 @@ test('toppings header is not on summary page if no toppings ordered', async () =
 test('toppings header is not on summary page if toppings ordered, then removed', async () => {
   const user = userEvent.setup();
   render(<App />);
-  // add ice cream scoops
   const vanillaInput = await screen.findByRole('spinbutton', {
     name: 'Vanilla',
   });
